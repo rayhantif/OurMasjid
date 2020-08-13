@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/logo_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/masjidbackg" />
+
+    <ImageView
+        android:id="@+id/email_register"
+        android:layout_width="59dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_register"
+        app:srcCompat="@drawable/email_big" />
+
+    <ImageView
+        android:id="@+id/masjid"
+        android:layout_width="59dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/email_register"
+        app:layout_constraintTop_toBottomOf="@+id/email_register"
+        app:srcCompat="@drawable/masjid" />
+
+    <ImageView
+        android:id="@+id/alamat"
+        android:layout_width="59dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/masjid"
+        app:layout_constraintTop_toBottomOf="@+id/masjid"
+        app:srcCompat="@drawable/alamat" />
+
+    <EditText
+        android:id="@+id/emailtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="E-Mail"
+        android:textColor="#454242"
+        android:textColorHint="#4C4848"
+        app:layout_constraintStart_toEndOf="@+id/email_register"
+        app:layout_constraintTop_toTopOf="@+id/email_register" />
+
+    <EditText
+        android:id="@+id/textmasjid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Nama Masjid"
+        android:textColor="#454242"
+        android:textColorHint="#4C4848"
+        app:layout_constraintStart_toEndOf="@+id/masjid"
+        app:layout_constraintTop_toTopOf="@+id/masjid" />
+
+    <EditText
+        android:id="@+id/textalamat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Alamat Masjid"
+        android:textColor="#454242"
+        android:textColorHint="#4C4848"
+        app:layout_constraintStart_toEndOf="@+id/alamat"
+        app:layout_constraintTop_toTopOf="@+id/alamat" />
+
+    <ImageView
+        android:id="@+id/password1"
+        android:layout_width="59dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/alamat"
+        app:layout_constraintTop_toBottomOf="@+id/alamat"
+        app:srcCompat="@drawable/password" />
+
+    <ImageView
+        android:id="@+id/password2"
+        android:layout_width="59dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/password1"
+        app:layout_constraintTop_toBottomOf="@+id/password1"
+        app:srcCompat="@drawable/password" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toEndOf="@+id/password1"
+        app:layout_constraintTop_toTopOf="@+id/password1" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toEndOf="@+id/password2"
+        app:layout_constraintTop_toTopOf="@+id/password2" />
+
+    <Button
+        android:id="@+id/Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:text="login"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPassword1"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword1" />
+</androidx.constraintlayout.widget.ConstraintLayout>
