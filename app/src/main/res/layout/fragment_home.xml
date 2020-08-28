@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/text_sholatselanjutnya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:text="Sholat Selanjutnya"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/waktu_shalat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_sholatselanjutnya"
+        android:layout_alignLeft="@+id/text_sholatselanjutnya"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="14dp"
+        android:text="JJ : MM"
+        android:textSize="30dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/text_waktumenuju"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/waktu_shalat"
+        android:layout_alignLeft="@+id/waktu_shalat"
+        android:layout_marginLeft="-55dp"
+        android:layout_marginTop="20dp"
+        android:text="Waktu Menuju Sholat Selanjutnya"
+        android:textSize="15dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/waktu_sholatselanjutnya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_waktumenuju"
+        android:layout_alignLeft="@+id/text_waktumenuju"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="7dp"
+        android:text="JJ : MM :DD"
+        android:textSize="15dp"
+        android:textColor="@color/black"/>
+
+
+
+    <TextView
+        android:id="@+id/text_jadwalsholat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/waktu_sholatselanjutnya"
+        android:layout_alignLeft="@+id/waktu_sholatselanjutnya"
+        android:layout_marginLeft="-83dp"
+        android:layout_marginTop="15dp"
+        android:text="Jadwal Sholat Hari ini"
+        android:textColor="@color/black"
+        android:textSize="27dp" />
+
+    <TextView
+        android:id="@+id/text_subuh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_jadwalsholat"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:text="Subuh"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/waktu_subuh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_subuh"
+        android:layout_alignLeft="@id/text_subuh"
+        android:layout_marginLeft="-8dp"
+        android:layout_marginTop="5dp"
+        android:text="JJ :: MM"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/text_dzuhur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_subuh"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/text_subuh"
+        android:text="Dzuhur"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/waktu_dzuhur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_dzuhur"
+        android:layout_alignLeft="@id/text_dzuhur"
+        android:layout_marginLeft="-8dp"
+        android:layout_marginTop="5dp"
+        android:text="JJ :: MM"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/text_ashar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_dzuhur"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/text_dzuhur"
+        android:text="Ashar"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+    <TextView
+        android:id="@+id/waktu_ashar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_ashar"
+        android:layout_alignLeft="@id/text_ashar"
+        android:layout_marginLeft="-8dp"
+        android:layout_marginTop="5dp"
+        android:text="JJ :: MM"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/text_maghrib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_ashar"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/text_ashar"
+        android:text="Maghrib"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/waktu_maghrib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_maghrib"
+        android:layout_alignLeft="@id/text_maghrib"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="5dp"
+        android:text="JJ :: MM"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/text_isya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_maghrib"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/text_maghrib"
+        android:text="Isya"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/waktu_isya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_isya"
+        android:layout_alignLeft="@id/text_isya"
+        android:layout_marginLeft="-15dp"
+        android:layout_marginTop="5dp"
+        android:text="JJ :: MM"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/text_masjidterdekat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/waktu_ashar"
+        android:layout_alignLeft="@+id/waktu_dzuhur"
+        android:text="Masjid Terdekat"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_masjidterdekat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_masjidterdekat"/>
+
+</RelativeLayout>

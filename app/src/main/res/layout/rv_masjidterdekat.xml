@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/size_1"
+        android:layout_marginRight="@dimen/size_1"
+        card_view:cardBackgroundColor="@color/card"
+        card_view:cardCornerRadius="@dimen/size_2"
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardElevation="@dimen/size_2"
+        card_view:cardUseCompatPadding="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_4">
+
+        <ImageView
+            android:id="@+id/imagemasjid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/masjid" />
+
+        <LinearLayout
+            android:id="@+id/lineartext"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size_60"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/size_5"
+            android:layout_toEndOf="@+id/imagemasjid"
+            android:background="@color/card"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/namamasjid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="masjid"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_10"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/alamatmasjid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/size_2"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="alamat"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_6"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nohp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/size_2"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="nohp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_6"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearmap"
+            android:layout_width="84dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="@dimen/size_10"
+            android:layout_toEndOf="@+id/lineartext"
+            android:orientation="vertical"
+            android:background="@color/mapbackground"
+            android:gravity="right">
+
+            <ImageView
+                android:id="@+id/imagemaps"
+                android:layout_width="@dimen/size_30"
+                android:layout_height="@dimen/size_30"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/size_0"
+                android:layout_marginTop="@dimen/size_0"
+                android:layout_marginEnd="@dimen/size_0"
+                android:layout_marginBottom="@dimen/size_0"
+                android:background="@drawable/map"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/jarak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_2"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:maxLines="1"
+                android:text="Jarak"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_6"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
+
+
