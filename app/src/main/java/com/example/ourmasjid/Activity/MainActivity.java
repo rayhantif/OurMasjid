@@ -23,11 +23,13 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.ourmasjid.Model.Isi;
 import com.example.ourmasjid.Fragment.HomeFragment;
 import com.example.ourmasjid.Fragment.LoginFragment;
 import com.example.ourmasjid.Fragment.MasjidTerdekatFragment;
 import com.example.ourmasjid.R;
 import com.google.android.material.navigation.NavigationView;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawer;
     private Button login;
     private EditText email, pass;
+    public String isiJson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         drawer=findViewById(R.id.drawer_layout);
         NavigationView navigationView=findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -56,12 +58,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new
                     HomeFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
+
         JsonGet();
+
 
     }
 
@@ -97,19 +101,43 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    public void JsonGet(){
+    public void  JsonGet(){
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
-            String URL = "http://192.168.0.109/ourmasjid/masjidDisplayAll.php";
+            String URL = "http://192.168.100.7/ourmasjid/masjidDisplayAll.php";
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("Title", "Android Volley Demo");
             jsonBody.put("Author", "BNK");
             final String requestBody = jsonBody.toString();
+           /* JsonObjectRequest request=new JsonObjectRequest(Request.Method.GET, URL, null,
+                new Response.Listener<JSONObject>() {
+                private JSONArray array;
+                @Override
+                public void onResponse(JSONObject response) {
+                    try {
 
+                        JSONArray jsonArray= response.getJSONArray("Isi");
+                        Log.i("VOLLEY", jsonArray.getString(0));
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }, new Response.ErrorListener(){
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                }
+            });*/
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
+
                     Log.i("VOLLEY", response);
+                    Gson gson=new Gson();
+                    Isi isi=gson.fromJson(isiJson, Isi.class);
+
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -150,5 +178,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
     }
+
+
 }

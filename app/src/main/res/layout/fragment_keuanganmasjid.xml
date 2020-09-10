@@ -5,12 +5,99 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
 
+    <ImageView
+        android:id="@+id/imagemasjid"
+        android:layout_width="87dp"
+        android:layout_height="84dp"
+        android:layout_below="@+id/gambarmasjid"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="24dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/masjid" />
+
+    <LinearLayout
+        android:id="@+id/lineartext"
+        android:layout_width="257dp"
+        android:layout_height="88dp"
+        android:layout_alignTop="@+id/imagemasjid"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/imagemasjid"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/namamasjidpengururs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="DKM Masjid x"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_10"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/alamatmasjidpengurus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="@dimen/size_2"
+
+
+            android:text="JL. x"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_6"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nohppenguru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="@dimen/size_2"
+
+            android:text="0821xxxxxxxx"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_6"
+            android:textStyle="bold" />
+    </LinearLayout>
     <TextView
         android:id="@+id/text_keuanganmasjid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Page Keuangan Masjid"
-        android:textSize="30dp" />
+        android:layout_below="@id/imagemasjid"
+        android:text="Keuangan Masjid"
+        android:gravity="center"
+        android:layout_marginTop="21dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_10"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_keuanganmasjid"/>
+
+    <Button
+        android:id="@+id/buttonTambahtransaksi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="13dp"
+        android:text="Tambah transaksi" />
+
+    <Button
+        android:id="@+id/buttoncetak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="13dp"
+        android:text="Cetak Laporan" />
 
 </RelativeLayout>

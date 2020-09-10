@@ -12,8 +12,12 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ourmasjid.Activity.MainActivity;
 import com.example.ourmasjid.Adapter.MasjidTerdekatAdapter;
 import com.example.ourmasjid.R;
+import com.google.gson.JsonArray;
+
+import org.json.JSONArray;
 
 public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
@@ -25,9 +29,11 @@ public class HomeFragment extends Fragment {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+
         recyclerView.setAdapter(new MasjidTerdekatAdapter());
 
         return  view;
 
     }
+
 }

@@ -6,11 +6,50 @@
     android:background="@color/colorPrimary">
 
     <TextView
-        android:id="@+id/text_sholatselanjutnyapengurus"
+        android:id="@+id/text_sholatselanjutnya"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_marginStart="70dp"
         android:text="Sholat Selanjutnya"
+        android:textColor="@color/black"
         android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/waktu_shalat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_sholatselanjutnya"
+        android:layout_alignLeft="@+id/text_sholatselanjutnya"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="14dp"
+        android:text="JJ : MM"
+        android:textSize="30dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/text_waktumenuju"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/waktu_shalat"
+        android:layout_alignLeft="@+id/waktu_shalat"
+        android:layout_marginLeft="-55dp"
+        android:layout_marginTop="20dp"
+        android:text="Waktu Menuju Sholat Selanjutnya"
+        android:textSize="15dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/waktu_sholatselanjutnya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_waktumenuju"
+        android:layout_alignLeft="@+id/text_waktumenuju"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="7dp"
+        android:text="JJ : MM :DD"
+        android:textSize="15dp"
+        android:textColor="@color/black"/>
+
+
 
 </RelativeLayout>

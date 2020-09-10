@@ -1,27 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary">
 
-    <androidx.cardview.widget.CardView
+    <ImageView
+        android:id="@+id/gambarmasjid"
+        android:layout_width="75dp"
+        android:layout_height="72dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/masjidbackg" />
+
+
+    <ImageView
+        android:id="@+id/imagemasjid"
+        android:layout_width="87dp"
+        android:layout_height="84dp"
+        android:layout_below="@+id/gambarmasjid"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="24dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/masjid" />
+
+    <LinearLayout
+        android:id="@+id/lineartext"
+        android:layout_width="257dp"
+        android:layout_height="88dp"
+        android:layout_alignTop="@+id/imagemasjid"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/imagemasjid"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/namamasjidpengururs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="DKM Masjid x"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_10"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/alamatmasjidpengurus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="@dimen/size_2"
+
+
+            android:text="JL. x"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_6"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nohppenguru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="@dimen/size_2"
+
+            android:text="0821xxxxxxxx"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_6"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textProfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_view"
-        android:layout_gravity="center"
-        android:layout_marginLeft="@dimen/size_1"
-        android:layout_marginRight="@dimen/size_1"
-        card_view:cardBackgroundColor="@color/card"
-        card_view:cardCornerRadius="@dimen/size_2"
-        card_view:cardPreventCornerOverlap="true"
-        card_view:cardElevation="@dimen/size_2"
-        card_view:cardUseCompatPadding="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"/>
+        android:layout_below="@+id/imagemasjid"
+        android:gravity="center"
+        android:layout_marginTop="21dp"
+        android:text="Profil Anda"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_10"
+        android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/emailpicture"
+        android:layout_width="59dp"
+        android:layout_height="61dp"
+        android:layout_below="@id/textProfil"
+        android:layout_marginStart="@dimen/size_15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_register"
+        app:srcCompat="@drawable/email_big" />
+
+    <EditText
+        android:id="@+id/editTextemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textProfil"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="17dp"
+        android:layout_toEndOf="@+id/emailpicture"
+        android:ems="10"
+        android:text="Email" />
+
+    <Button
+        android:id="@+id/buttonemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textProfil"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@+id/editTextemail"
+        android:text="Ubah" />
+
+    <ImageView
+        android:id="@+id/penguruspicture"
+        android:layout_width="59dp"
+        android:layout_height="61dp"
+        android:layout_below="@id/emailpicture"
+        android:layout_marginStart="@dimen/size_15"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_register"
+        app:srcCompat="@drawable/orang" />
+
+    <EditText
+        android:id="@+id/editTextnamapengurus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/penguruspicture"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/penguruspicture"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Sdr x" />
+
+
+    <Button
+        android:id="@+id/buttonpengurus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textProfil"
+        android:layout_alignTop="@+id/editTextnamapengurus"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="-7dp"
+        android:layout_toEndOf="@+id/editTextnamapengurus"
+        android:text="Ubah" />
+    <ImageView
+        android:id="@+id/gembokpicture"
+        android:layout_width="59dp"
+        android:layout_height="61dp"
+        android:layout_below="@id/penguruspicture"
+        android:layout_marginStart="@dimen/size_15"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_register"
+        app:srcCompat="@drawable/password" />
+
+    <EditText
+        android:id="@+id/editTextpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/gembokpicture"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/gembokpicture"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="Sdr x" />
+
+    <Button
+        android:id="@+id/buttonpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textProfil"
+        android:layout_alignTop="@+id/editTextpassword"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="-7dp"
+        android:layout_toEndOf="@+id/editTextpassword"
+        android:text="Ubah" />
+
+    <ImageView
+        android:id="@+id/locationkpicture"
+        android:layout_width="59dp"
+        android:layout_height="61dp"
+        android:layout_below="@id/penguruspicture"
+        android:layout_marginStart="@dimen/size_15"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_register"
+        app:srcCompat="@drawable/alamat" />
+
+    <EditText
+        android:id="@+id/editlokasidbedasarkangmaps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/locationkpicture"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/locationkpicture"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="Sdr x" />
+
+    <Button
+        android:id="@+id/buttonlokasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textProfil"
+        android:layout_alignTop="@+id/editlokasidbedasarkangmaps"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="-7dp"
+        android:layout_toEndOf="@+id/editlokasidbedasarkangmaps"
+        android:text="Update" />
 
 </RelativeLayout>

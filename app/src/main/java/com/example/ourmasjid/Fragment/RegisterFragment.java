@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,14 +16,14 @@ import androidx.fragment.app.Fragment;
 import com.example.ourmasjid.Activity.PengurusActivity;
 import com.example.ourmasjid.R;
 
-public class LoginFragment extends Fragment {
+public class RegisterFragment extends Fragment {
     private Button login, register;
     private EditText email, pass;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View views = inflater.inflate(R.layout.fragment_login, container, false);
+        View views = inflater.inflate(R.layout.fragment_register, container, false);
         email=views.findViewById(R.id.emailtext);
         pass=views.findViewById(R.id.editTextTextPasswordLogin);
         login = views.findViewById(R.id.Login);
