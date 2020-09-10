@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                     Log.i("VOLLEY", response);
                     Gson gson=new Gson();
-                    Isi isi=gson.fromJson(isiJson, Isi.class);
+                    Isi isi=gson.fromJson(response, Isi.class);
 
                 }
             }, new Response.ErrorListener() {

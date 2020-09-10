@@ -1,5 +1,6 @@
 package com.example.ourmasjid.Adapter;
 
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.ourmasjid.Activity.MainActivity;
 import com.example.ourmasjid.Fragment.HomeFragment;
+import com.example.ourmasjid.Model.Masjid;
 import com.example.ourmasjid.R;
 import com.google.gson.JsonArray;
 
@@ -29,6 +31,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MasjidTerdekatAdapter extends RecyclerView.Adapter<MasjidTerdekatAdapter.MyViewHolder> {
@@ -36,6 +39,8 @@ public class MasjidTerdekatAdapter extends RecyclerView.Adapter<MasjidTerdekatAd
     private String[] alamatlist={"Kebon Kopi","Pajajaran Dalam", "Buah Batu", "Batununggal"};
     private String[] nohplist={"12345", "678910", "11121314","04200007"};
     private String[] jarak={"111","87","78","20"};
+    private ArrayList<Masjid> mMasjid;
+    private Context mContext;
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView nama, alamat, nohp, jarak;
@@ -49,7 +54,9 @@ public class MasjidTerdekatAdapter extends RecyclerView.Adapter<MasjidTerdekatAd
     }
 
 
-    public MasjidTerdekatAdapter() {
+    public MasjidTerdekatAdapter(Context context, ArrayList<Masjid> masjidArrayList) {
+        mMasjid=masjidArrayList;
+        mContext=context;
     }
 
     @Override
@@ -62,22 +69,19 @@ public class MasjidTerdekatAdapter extends RecyclerView.Adapter<MasjidTerdekatAd
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-
-        for(int i=0; i<4; i++) {
-
-                holder.nama.setText(masjidlist[position]);
-                holder.alamat.setText(alamatlist[position]);
-                holder.nohp.setText(nohplist[position]);
-                holder.jarak.setText(jarak[position]);
+        Masjid currentmasjid=mMasjid.get(position);
 
 
-            }
+        holder.nama.setText(currentmasjid.getMnamamasjid());
+        holder.alamat.setText(currentmasjid.getMalamat());
+        holder.nohp.setText(currentmasjid.getMnohp());
+        holder.jarak.setText(currentmasjid.getMlongitude());
 
 
     }
 
     @Override
     public int getItemCount() {
-        return 4;
+        return mMasjid.size();
     }
 }
