@@ -22,7 +22,10 @@
         <activity android:name=".Activity.PengurusActivity"
             android:theme="@style/AppTheme.NoActionBar">
 
+
         </activity>
+        <activity android:name=".Activity.RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -97,6 +97,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="17dp"
         android:layout_toEndOf="@+id/emailpicture"
+        android:inputType="textEmailAddress"
         android:ems="10"
         android:hint="Email anda"/>
 
@@ -210,5 +211,18 @@
         android:layout_marginTop="-7dp"
         android:layout_toEndOf="@+id/editlokasidbedasarkangmaps"
         android:text="Update" />
+    <ProgressBar
+        android:id="@+id/progressBarprofile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:foregroundGravity="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </RelativeLayout>

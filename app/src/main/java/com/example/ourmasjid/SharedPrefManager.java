@@ -23,6 +23,7 @@ public class SharedPrefManager {
     public static String NOHP="x";
     public static String NAMA="x";
     public static String EMAIL="x";
+    public static int IDPENGURUS=1;
 
     private static SharedPrefManager mInstance;
     private static Context mCtx;
@@ -59,6 +60,7 @@ public class SharedPrefManager {
         NOHP=masjid.getMnohp();
         NAMA=pengurus.getMnamapengurus();
         EMAIL=pengurus.getMemailpengurus();
+        IDPENGURUS=pengurus.getMidpengurus();
     }
 
     //this method will checker whether user is already logged in or not

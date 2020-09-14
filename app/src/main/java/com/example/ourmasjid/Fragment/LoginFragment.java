@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.ourmasjid.Activity.MainActivity;
 import com.example.ourmasjid.Activity.PengurusActivity;
+import com.example.ourmasjid.Activity.RegisterActivity;
 import com.example.ourmasjid.Model.Masjid;
 import com.example.ourmasjid.Model.Pengurus;
 import com.example.ourmasjid.R;
@@ -31,12 +33,14 @@ import com.example.ourmasjid.URLs;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 
 public class LoginFragment extends Fragment {
-    private Button login, register;
+    private Button login;
      private EditText email, pass;
+     private TextView register;
 
     @Nullable
     @Override
@@ -46,7 +50,13 @@ public class LoginFragment extends Fragment {
         pass = views.findViewById(R.id.editTextTextPasswordLogin);
         login = views.findViewById(R.id.Login);
 
-
+        register=views.findViewById(R.id.textViewRegister);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), RegisterActivity.class));
+            }
+        });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

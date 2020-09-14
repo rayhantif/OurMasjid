@@ -100,7 +100,7 @@
         app:srcCompat="@drawable/password" />
 
     <EditText
-        android:id="@+id/editTextpaswswordregister"
+        android:id="@+id/editTextpasswordregister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -112,7 +112,7 @@
         app:layout_constraintTop_toTopOf="@+id/password1" />
 
     <EditText
-        android:id="@+id/editTextpasswrodregister2"
+        android:id="@+id/editTextpasswordregister2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -129,6 +129,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
         android:text="Register"
-        app:layout_constraintStart_toEndOf="@+id/editTextpaswswordregister"
-        app:layout_constraintTop_toBottomOf="@+id/editTextpaswswordregister" />
+        app:layout_constraintStart_toEndOf="@+id/editTextpasswordregister"
+        app:layout_constraintTop_toBottomOf="@+id/editTextpasswordregister" />
+
+    <ProgressBar
+        android:id="@+id/progressBarregister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:foregroundGravity="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
