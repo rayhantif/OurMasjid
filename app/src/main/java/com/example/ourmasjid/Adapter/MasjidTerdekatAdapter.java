@@ -1,5 +1,6 @@
 package com.example.ourmasjid.Adapter;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -41,6 +42,7 @@ public class MasjidTerdekatAdapter extends RecyclerView.Adapter<MasjidTerdekatAd
     private String[] jarak={"111","87","78","20"};
     private ArrayList<Masjid> mMasjid;
     private Context mContext;
+   // private OnItemClickListener mListener;
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView nama, alamat, nohp, jarak;
@@ -50,6 +52,7 @@ public class MasjidTerdekatAdapter extends RecyclerView.Adapter<MasjidTerdekatAd
             alamat = (TextView) view.findViewById(R.id.alamatmasjid);
             nohp = (TextView) view.findViewById(R.id.nohp);
             jarak=(TextView) view.findViewById(R.id.jarak);
+
         }
     }
 
@@ -63,7 +66,6 @@ public class MasjidTerdekatAdapter extends RecyclerView.Adapter<MasjidTerdekatAd
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.rv_masjidterdekat, parent, false);
-
         return new MyViewHolder(itemView);
     }
 
@@ -76,7 +78,7 @@ public class MasjidTerdekatAdapter extends RecyclerView.Adapter<MasjidTerdekatAd
         holder.alamat.setText(currentmasjid.getMalamat());
         holder.nohp.setText(currentmasjid.getMnohp());
         holder.jarak.setText(currentmasjid.getMlongitude());
-
+       // holder.itemView.setOnClickListener(clickListener);
 
     }
 
@@ -84,4 +86,13 @@ public class MasjidTerdekatAdapter extends RecyclerView.Adapter<MasjidTerdekatAd
     public int getItemCount() {
         return mMasjid.size();
     }
+
+    View.OnClickListener clickListener=new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Masjid masjid=(Masjid) view.getTag();
+
+
+        }
+    };
 }

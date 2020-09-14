@@ -23,9 +23,8 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.ourmasjid.Activity.MainActivity;
 import com.example.ourmasjid.Adapter.MasjidTerdekatAdapter;
-import com.example.ourmasjid.Model.Isi;
+import com.example.ourmasjid.Model.MasjidList;
 import com.example.ourmasjid.R;
 import com.google.gson.Gson;
 
@@ -64,7 +63,7 @@ public class MasjidTerdekatFragment extends Fragment {
 
                     Log.i("VOLLEY", response);
                     Gson gson=new Gson();
-                    Isi isi=gson.fromJson(response, Isi.class);
+                    MasjidList isi=gson.fromJson(response, MasjidList.class);
                     recyclerView.setAdapter(new MasjidTerdekatAdapter(getActivity().getApplicationContext(), isi.getMmasjid()));
 
                 }

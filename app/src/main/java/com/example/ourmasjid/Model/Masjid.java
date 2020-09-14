@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 public class Masjid {
 
     @SerializedName("id_masjid")
-    private String mid_masjid;
+    private int mid_masjid;
 
     @SerializedName("nama_masjid")
     private String mnamamasjid;
@@ -20,9 +20,10 @@ public class Masjid {
     @SerializedName("latitude")
     private String mlatidue;
 
-    public Masjid(String id_masjid, String namamasjid, String alamat, String longitude, String latitude){
+    public Masjid(int id_masjid, String namamasjid, String alamat, String nohp,String longitude, String latitude){
         mid_masjid=id_masjid;
         mnamamasjid=namamasjid;
+        mnohp=nohp;
         malamat=alamat;
         mlongitude=longitude;
         mlatidue=latitude;
@@ -36,7 +37,7 @@ public class Masjid {
         return mlatidue;
     }
 
-    public String getMid_masjid() {
+    public int getMid_masjid() {
         return mid_masjid;
     }
 

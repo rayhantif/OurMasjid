@@ -1,8 +1,8 @@
 package com.example.ourmasjid.Activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -12,27 +12,29 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.ourmasjid.Fragment.HomeFragment;
 import com.example.ourmasjid.Fragment.HomePengurusFragment;
 import com.example.ourmasjid.Fragment.KegiatanMasjidFragment;
 import com.example.ourmasjid.Fragment.KeuanganMasjidFragment;
-import com.example.ourmasjid.Fragment.LoginFragment;
-import com.example.ourmasjid.Fragment.MasjidTerdekatFragment;
-import com.example.ourmasjid.Fragment.ProfilMasjidFragment;
+import com.example.ourmasjid.Fragment.ProfileMasjidFragment;
+import com.example.ourmasjid.Model.Masjid;
 import com.example.ourmasjid.R;
+import com.example.ourmasjid.SharedPrefManager;
 import com.google.android.material.navigation.NavigationView;
 
 public class PengurusActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+    private Masjid mmasjid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        if (!SharedPrefManager.getInstance(this).isLoggedIn()) {
+            finish();
+            startActivity(new Intent(this, MainActivity.class));
+        }
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         drawer=findViewById(R.id.drawer_layout);
         NavigationView navigationView=findViewById(R.id.nav_view);
         navigationView.getMenu().clear();
@@ -70,7 +72,7 @@ public class PengurusActivity extends AppCompatActivity implements NavigationVie
                 break;
             case R.id.nav_masjid:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new
-                        ProfilMasjidFragment()).commit();
+                        ProfileMasjidFragment()).commit();
                 break;
             case R.id.nav_kegiatan:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new
@@ -81,13 +83,20 @@ public class PengurusActivity extends AppCompatActivity implements NavigationVie
                         KeuanganMasjidFragment()).commit();
                 break;
             case R.id.nav_logout:
-                Intent intent=new Intent(this, MainActivity.class);
-                startActivity(intent);
                 finish();
+                SharedPrefManager.getInstance(getApplicationContext()).logout();
                 break;
 
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void setMmasjid(Masjid masjid) {
+        this.mmasjid = masjid;
+    }
+
+    public Masjid getMmasjid() {
+        return mmasjid;
     }
 }

@@ -21,28 +21,25 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.ourmasjid.Activity.MainActivity;
 import com.example.ourmasjid.Adapter.MasjidTerdekatAdapter;
-import com.example.ourmasjid.Model.Isi;
 import com.example.ourmasjid.Model.Masjid;
+import com.example.ourmasjid.Model.MasjidList;
 import com.example.ourmasjid.R;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment{
     RecyclerView recyclerView;
     private MasjidTerdekatAdapter mMasjidTerdekatAdapter;
     private RequestQueue mRequestQueue;
+    private ArrayList<Masjid> mMasjidList;
 
     @Nullable
     @Override
@@ -72,8 +69,10 @@ public class HomeFragment extends Fragment {
 
                     Log.i("VOLLEY", response);
                     Gson gson=new Gson();
-                    Isi isi=gson.fromJson(response, Isi.class);
-                    recyclerView.setAdapter(new MasjidTerdekatAdapter(getActivity().getApplicationContext(), isi.getMmasjid()));
+                    MasjidList isi=gson.fromJson(response, MasjidList.class);
+                    mMasjidList=isi.getMmasjid();
+                    mMasjidTerdekatAdapter=new MasjidTerdekatAdapter(getActivity().getApplicationContext(), isi.getMmasjid());
+                    recyclerView.setAdapter(mMasjidTerdekatAdapter);
 
                 }
             }, new Response.ErrorListener() {
@@ -117,6 +116,4 @@ public class HomeFragment extends Fragment {
         }
 
     }
-
-
 }

@@ -52,9 +52,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="E-Mail"
-        android:textColor="#454242"
-        android:textColorHint="#4C4848"
+        android:hint="E-Mail"
         app:layout_constraintStart_toEndOf="@+id/email_register"
         app:layout_constraintTop_toTopOf="@+id/email_register" />
 
@@ -66,9 +64,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Nama Masjid"
-        android:textColor="#454242"
-        android:textColorHint="#4C4848"
+        android:hint="Nama Masjid"
         app:layout_constraintStart_toEndOf="@+id/masjid"
         app:layout_constraintTop_toTopOf="@+id/masjid" />
 
@@ -80,9 +76,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Alamat Masjid"
-        android:textColor="#454242"
-        android:textColorHint="#4C4848"
+        android:hint="Alamat Masjid"
         app:layout_constraintStart_toEndOf="@+id/alamat"
         app:layout_constraintTop_toTopOf="@+id/alamat" />
 
@@ -113,6 +107,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPassword"
+        android:hint="Password Baru"
         app:layout_constraintStart_toEndOf="@+id/password1"
         app:layout_constraintTop_toTopOf="@+id/password1" />
 
@@ -123,6 +118,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="Password Baru"
         android:inputType="textPassword"
         app:layout_constraintStart_toEndOf="@+id/password2"
         app:layout_constraintTop_toTopOf="@+id/password2" />

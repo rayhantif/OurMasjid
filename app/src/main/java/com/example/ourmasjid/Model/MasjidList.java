@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Isi {
+public class MasjidList {
     @SerializedName("listmasjid")
     private ArrayList<Masjid> mmasjid;
 
-    public Isi(ArrayList<Masjid> masjid){
+    public MasjidList(ArrayList<Masjid> masjid){
         mmasjid=masjid;
     }
 

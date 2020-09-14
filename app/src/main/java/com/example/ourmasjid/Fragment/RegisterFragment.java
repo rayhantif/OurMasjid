@@ -27,7 +27,7 @@ public class RegisterFragment extends Fragment {
         email=views.findViewById(R.id.emailtext);
         pass=views.findViewById(R.id.editTextTextPasswordLogin);
         login = views.findViewById(R.id.Login);
-        register= views.findViewById(R.id.register);
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

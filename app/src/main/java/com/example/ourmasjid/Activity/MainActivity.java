@@ -7,46 +7,34 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.HttpHeaderParser;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.ourmasjid.Model.Isi;
 import com.example.ourmasjid.Fragment.HomeFragment;
 import com.example.ourmasjid.Fragment.LoginFragment;
 import com.example.ourmasjid.Fragment.MasjidTerdekatFragment;
 import com.example.ourmasjid.R;
+import com.example.ourmasjid.SharedPrefManager;
 import com.google.android.material.navigation.NavigationView;
-import com.google.gson.Gson;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.UnsupportedEncodingException;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public  class  MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawer;
     private Button login;
     private EditText email, pass;
     public String isiJson;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (SharedPrefManager.getInstance(this).isLoggedIn()) {
+            finish();
+            startActivity(new Intent(this, PengurusActivity.class));
+            return;
+        }
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -64,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             navigationView.setCheckedItem(R.id.nav_home);
         }
 
-        JsonGet();
+
 
 
     }
@@ -101,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    public void  JsonGet(){
+   /* public void  JsonGet(){
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
             String URL = "http://192.168.100.7/ourmasjid/masjidDisplayAll.php";
@@ -116,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 public void onResponse(JSONObject response) {
                     try {
 
-                        JSONArray jsonArray= response.getJSONArray("Isi");
+                        JSONArray jsonArray= response.getJSONArray("MasjidList");
                         Log.i("VOLLEY", jsonArray.getString(0));
 
                     } catch (JSONException e) {
@@ -129,14 +117,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 public void onErrorResponse(VolleyError error) {
 
                 }
-            });*/
+            });
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
 
                     Log.i("VOLLEY", response);
                     Gson gson=new Gson();
-                    Isi isi=gson.fromJson(response, Isi.class);
+                    MasjidList isi=gson.fromJson(response, MasjidList.class);
 
                 }
             }, new Response.ErrorListener() {
@@ -179,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             e.printStackTrace();
         }
 
-    }
+    }*/
 
 
 }

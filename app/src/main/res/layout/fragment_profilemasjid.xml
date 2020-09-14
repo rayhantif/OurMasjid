@@ -51,20 +51,17 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginTop="@dimen/size_2"
-
-
             android:text="JL. x"
             android:textColor="@color/black"
             android:textSize="@dimen/text_6"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/nohppenguru"
+            android:id="@+id/nohppengurus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginTop="@dimen/size_2"
-
             android:text="0821xxxxxxxx"
             android:textColor="@color/black"
             android:textSize="@dimen/text_6"
@@ -78,7 +75,7 @@
         android:layout_below="@+id/imagemasjid"
         android:gravity="center"
         android:layout_marginTop="21dp"
-        android:text="Profil Anda"
+        android:hint="Profil Anda"
         android:textColor="@color/black"
         android:textSize="@dimen/text_10"
         android:textStyle="bold" />
@@ -101,7 +98,7 @@
         android:layout_marginTop="17dp"
         android:layout_toEndOf="@+id/emailpicture"
         android:ems="10"
-        android:text="Email" />
+        android:hint="Email anda"/>
 
     <Button
         android:id="@+id/buttonemail"
@@ -134,7 +131,7 @@
         android:layout_toEndOf="@+id/penguruspicture"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Sdr x" />
+        android:hint="Nama Anda"/>
 
 
     <Button
@@ -168,7 +165,7 @@
         android:layout_toEndOf="@+id/gembokpicture"
         android:ems="10"
         android:inputType="textPassword"
-        android:text="Sdr x" />
+       android:hint="Password Baru anda" />
 
     <Button
         android:id="@+id/buttonpassword"
@@ -185,7 +182,7 @@
         android:id="@+id/locationkpicture"
         android:layout_width="59dp"
         android:layout_height="61dp"
-        android:layout_below="@id/penguruspicture"
+        android:layout_below="@id/gembokpicture"
         android:layout_marginStart="@dimen/size_15"
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -201,8 +198,7 @@
         android:layout_marginTop="8dp"
         android:layout_toEndOf="@+id/locationkpicture"
         android:ems="10"
-        android:inputType="textPassword"
-        android:text="Sdr x" />
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/buttonlokasi"

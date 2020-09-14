@@ -78,7 +78,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/text_keuanganmasjid"/>
+        android:layout_below="@id/text_keuanganmasjid"
+        android:id="@+id/rv_keuanganmasjid"/>
 
     <Button
         android:id="@+id/buttonTambahtransaksi"

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="@dimen/size_4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imagemasjid"
+            android:layout_width="122dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/masjid" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearmap"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/mapbackground"
+        android:gravity="right"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/alamatmasjid"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imagemaps"
+            android:layout_width="@dimen/size_30"
+            android:layout_height="@dimen/size_30"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/size_0"
+            android:layout_marginTop="@dimen/size_0"
+            android:layout_marginEnd="@dimen/size_0"
+            android:layout_marginBottom="@dimen/size_0"
+            android:background="@drawable/map"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/jarak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/size_2"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Jarak"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_6"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/namamasjid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="masjid"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_10"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/relativeLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/alamatmasjid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="alamat"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_6"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/namamasjid"
+        app:layout_constraintTop_toBottomOf="@+id/namamasjid" />
+
+    <TextView
+        android:id="@+id/nohp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="nohp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_6"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/alamatmasjid"
+        app:layout_constraintTop_toBottomOf="@+id/alamatmasjid" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

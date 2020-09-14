@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/size_1"
+        android:layout_marginRight="@dimen/size_1"
+        card_view:cardBackgroundColor="@color/card"
+        card_view:cardCornerRadius="@dimen/size_2"
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardElevation="@dimen/size_2"
+        card_view:cardUseCompatPadding="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        >
+
+    <RelativeLayout
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_4">
+
+        <TextView
+            android:id="@+id/namakegiatan"
+            android:layout_width="382dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Pemotongan Kurban"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_10"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/linearleft"
+            android:layout_width="168dp"
+            android:layout_height="81dp"
+            android:layout_below="@id/namakegiatan"
+            android:layout_alignStart="@+id/namakegiatan"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="9dp"
+            android:background="@color/card"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tanggalkegiatan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/size_2"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Tanggal Kegiantan"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_6"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pemateri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/size_2"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="pemateri"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_6"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearright"
+            android:layout_width="168dp"
+            android:layout_height="81dp"
+            android:layout_below="@id/namakegiatan"
+            android:layout_alignEnd="@+id/namakegiatan"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="9dp"
+            android:background="@color/card"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/alamatkegiatan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/size_2"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Alamat Kegiantan"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_6"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/penanggung_jawab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/size_2"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="PJ"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_6"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
+
+
