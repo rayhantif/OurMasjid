@@ -28,6 +28,10 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Activity.KegiatanFormActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Activity.KeuanganFormActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Activity.DetailMasjidActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

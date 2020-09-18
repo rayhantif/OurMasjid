@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="157dp"
+        android:layout_marginEnd="136dp"
+        android:gravity="center"
+        android:text="Keuangan"
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/editTextnamatransaksi"
+        android:layout_width="389dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="3dp"
+        android:ems="10"
+        android:hint="Nama Transaksi"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextTanggaltransaksi"
+        android:layout_width="389dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/editTextnamatransaksi"
+        android:layout_alignStart="@+id/editTextnamatransaksi"
+        android:layout_alignEnd="@+id/editTextnamatransaksi"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="Tanggal Transaksi(TAHUN-BULAN-TANGGAL JAM:MENIT:DETIK)"
+        android:inputType="datetime" />
+
+    <ImageView
+        android:id="@+id/calendarimage"
+        android:layout_width="46dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/editTextTanggaltransaksi"
+        android:layout_alignEnd="@+id/editTextnamatransaksi"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="5dp"
+        app:srcCompat="@drawable/calendar" />
+
+
+    <Spinner
+        android:id="@+id/spinnerjenistransaksi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextTanggaltransaksi"
+        android:layout_alignStart="@+id/editTextTanggaltransaksi"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextJumlahtransaksi"
+        android:layout_width="389dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/spinnerjenistransaksi"
+        android:layout_alignStart="@+id/spinnerjenistransaksi"
+        android:layout_alignEnd="@+id/spinnerjenistransaksi"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="Jumlah Transaksi"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/buttonsimpantransaksi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextJumlahtransaksi"
+        android:layout_alignParentEnd="true"
+        android:text="simpan" />
+    <ProgressBar
+        android:id="@+id/progressBartransaksi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:foregroundGravity="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</RelativeLayout>

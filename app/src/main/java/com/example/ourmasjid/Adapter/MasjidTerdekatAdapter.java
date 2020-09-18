@@ -6,8 +6,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.AuthFailureError;
@@ -36,13 +38,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MasjidTerdekatAdapter extends RecyclerView.Adapter<MasjidTerdekatAdapter.MyViewHolder> {
-    private String[] masjidlist={"Masjid An Nur", "Masjid Al-aqsa", "Masjid Faisal", "Masjid Badashi"};
-    private String[] alamatlist={"Kebon Kopi","Pajajaran Dalam", "Buah Batu", "Batununggal"};
-    private String[] nohplist={"12345", "678910", "11121314","04200007"};
-    private String[] jarak={"111","87","78","20"};
+    CardView cardView;
     private ArrayList<Masjid> mMasjid;
     private Context mContext;
    // private OnItemClickListener mListener;
+    RelativeLayout relativeLayout;
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView nama, alamat, nohp, jarak;
@@ -52,7 +52,8 @@ public class MasjidTerdekatAdapter extends RecyclerView.Adapter<MasjidTerdekatAd
             alamat = (TextView) view.findViewById(R.id.alamatmasjid);
             nohp = (TextView) view.findViewById(R.id.nohp);
             jarak=(TextView) view.findViewById(R.id.jarak);
-
+            cardView=view.findViewById(R.id.card_viewmasjidterdekta);
+            relativeLayout=view.findViewById(R.id.masjidterdekatlayout);
         }
     }
 
@@ -79,6 +80,7 @@ public class MasjidTerdekatAdapter extends RecyclerView.Adapter<MasjidTerdekatAd
         holder.nohp.setText(currentmasjid.getMnohp());
         holder.jarak.setText(currentmasjid.getMlongitude());
        // holder.itemView.setOnClickListener(clickListener);
+
 
     }
 

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 public class KeuanganMasjidAdapter extends RecyclerView.Adapter<KeuanganMasjidAdapter.MyViewHolder>{
     private ArrayList<Keuangan> mKeuangan;
     private Context mContext;
+    RelativeLayout relativeLayout;
     class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView tanggalkeuangan, namatransaksi, jenis, nominal, saldo;
         private MyViewHolder(View view) {
@@ -25,6 +27,7 @@ public class KeuanganMasjidAdapter extends RecyclerView.Adapter<KeuanganMasjidAd
             jenis=(TextView) view.findViewById(R.id.textjenis);
             nominal=(TextView) view.findViewById(R.id.textnominal);
             saldo=(TextView) view.findViewById(R.id.textsaldo);
+            relativeLayout=view.findViewById(R.id.relativeLayout);
         }
     }
 
@@ -58,6 +61,7 @@ public class KeuanganMasjidAdapter extends RecyclerView.Adapter<KeuanganMasjidAd
         holder.nominal.setText(Integer.toString(currentkeuangan.getMnominal()));
         holder.saldo.setText("?");
       //  holder.itemView.setOnClickListener(clickListener);
+        
 
     }
 

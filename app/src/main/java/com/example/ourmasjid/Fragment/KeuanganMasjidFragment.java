@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,9 +25,8 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.ourmasjid.Adapter.KegiatanMasjidAdapter;
+import com.example.ourmasjid.Activity.KeuanganFormActivity;
 import com.example.ourmasjid.Adapter.KeuanganMasjidAdapter;
-import com.example.ourmasjid.Model.KegiatanList;
 import com.example.ourmasjid.Model.Keuangan;
 import com.example.ourmasjid.Model.KeuanganList;
 import com.example.ourmasjid.R;
@@ -44,6 +44,7 @@ public class KeuanganMasjidFragment extends Fragment {
     RecyclerView recyclerView;
     private KeuanganMasjidAdapter mKeuanganMasjidAdapter;
     private ArrayList<Keuangan> mKeuanganList;
+    Button tambahtransaksi;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -53,6 +54,14 @@ public class KeuanganMasjidFragment extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         JsonGet();
+        tambahtransaksi=view.findViewById(R.id.buttonTambahtransaksi);
+        tambahtransaksi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), KeuanganFormActivity.class));
+            }
+        });
+
         return view;
     }
     private void  JsonGet(){
