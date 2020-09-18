@@ -1,10 +1,12 @@
 package com.example.ourmasjid.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,12 +25,13 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.ourmasjid.Activity.KegiatanFormActivity;
 import com.example.ourmasjid.Adapter.KegiatanMasjidAdapter;
-import com.example.ourmasjid.Adapter.MasjidTerdekatAdapter;
 import com.example.ourmasjid.Model.Kegiatan;
 import com.example.ourmasjid.Model.KegiatanList;
-import com.example.ourmasjid.Model.Masjid;
 import com.example.ourmasjid.R;
+import com.example.ourmasjid.SharedPrefManager;
+import com.example.ourmasjid.URLs;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -40,24 +43,31 @@ import java.util.ArrayList;
 public class KegiatanMasjidFragment extends Fragment {
     RecyclerView recyclerView;
     private KegiatanMasjidAdapter mKegiatanMasjidAdapter;
-    private RequestQueue mRequestQueue;
     private ArrayList<Kegiatan> mKegiatanList;
+    Button tambah;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_kegiatanmasjid, container, false);
+        tambah=view.findViewById(R.id.buttonTambahkegiatan);
         recyclerView = (RecyclerView) view.findViewById(R.id.rv_kegiatanmasjid);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         JsonGet();
+        tambah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), KegiatanFormActivity.class));
+            }
+        });
         return view;
     }
 
     private void  JsonGet(){
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
-            String URL = "http://192.168.43.251/ourmasjid/kegiatanMasjidSpecific.php";
+            String URL = "http://"+ URLs.IP+"/ourmasjid/kegiatanMasjidSpecific.php?id_masjid="+ SharedPrefManager.IDMASJID;
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("Title", "Android Volley Demo");
             jsonBody.put("Author", "BNK");

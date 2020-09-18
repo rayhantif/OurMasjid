@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="157dp"
+        android:layout_marginEnd="156dp"
+        android:gravity="center"
+        android:text="Kegiatan"
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/editTextnamakegiatan"
+        android:layout_width="389dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="5dp"
+        android:ems="10"
+        android:hint="Nama Kegiatan"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextTanggalKegiatan"
+        android:layout_width="389dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/editTextnamakegiatan"
+        android:layout_alignStart="@+id/editTextnamakegiatan"
+        android:layout_alignEnd="@+id/editTextnamakegiatan"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="Tanggal Kegiatan(TAHUN-BULAN-TANGGAL JAM:MENIT:DETIK)"
+        android:inputType="datetime" />
+
+    <ImageView
+        android:id="@+id/calendarimage"
+        android:layout_width="46dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/editTextTanggalKegiatan"
+        android:layout_alignEnd="@+id/editTextnamakegiatan"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="5dp"
+        app:srcCompat="@drawable/calendar" />
+
+    <EditText
+        android:id="@+id/editTextLokasiKegiatan"
+        android:layout_width="389dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/editTextTanggalKegiatan"
+        android:layout_alignStart="@+id/editTextTanggalKegiatan"
+        android:layout_alignEnd="@+id/editTextTanggalKegiatan"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="Lokasi Kegiatan"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextPemateri"
+        android:layout_width="389dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/editTextLokasiKegiatan"
+        android:layout_alignStart="@+id/editTextLokasiKegiatan"
+        android:layout_alignEnd="@+id/editTextLokasiKegiatan"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="Pemateri"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/editTextPJ"
+        android:layout_width="389dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/editTextPemateri"
+        android:layout_alignStart="@+id/editTextPemateri"
+        android:layout_alignEnd="@+id/editTextPemateri"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="PJ Kegiatan"
+        android:inputType="text" />
+
+    <Spinner
+        android:id="@+id/spinnerjenis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPJ"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/editTextLaporankegiatan"
+        android:layout_width="389dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/spinnerjenis"
+        android:layout_alignStart="@+id/spinnerjenis"
+        android:layout_alignEnd="@+id/spinnerjenis"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="Laporan Kegiatan"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/editTextVideoKegiatan"
+        android:layout_width="389dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/editTextLaporankegiatan"
+        android:layout_alignStart="@+id/editTextLaporankegiatan"
+        android:layout_alignEnd="@+id/editTextLaporankegiatan"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="Link Video Kegiatan"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/buttonsimpan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextVideoKegiatan"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="14dp"
+        android:text="simpan" />
+    <ProgressBar
+        android:id="@+id/progressBarkegiatan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:foregroundGravity="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</RelativeLayout>

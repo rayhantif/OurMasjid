@@ -9,8 +9,8 @@ public class Kegiatan {
     @SerializedName("nama_kegiatan")
     private String mnamakegiatan;
 
-    /*@SerializedName("waktu_kegiatan")
-    private String mwaktukegiatan;*/
+    @SerializedName("waktu_kegiatan")
+    private String mwaktukegiatan;
 
     @SerializedName("lokasi_kegiatan")
     private String mlokasikegiatan;
@@ -25,7 +25,7 @@ public class Kegiatan {
     String pemateri){
         this.midkegiatan=idkegiatan;
         this.mnamakegiatan=namakegiatan;
-       // this.mwaktukegiatan=waktukegiatan;
+        this.mwaktukegiatan=waktukegiatan;
         this.mlokasikegiatan=lokasikegiatan;
         this.mpenanggungjawab=penanggungjawab;
         this.mpemateri=pemateri;
@@ -52,7 +52,7 @@ public class Kegiatan {
     }
 
     public String getMwaktukegiatan() {
-        //return mwaktukegiatan;
-        return "hariini";
+        return mwaktukegiatan;
+        //return "hariini";
     }
 }

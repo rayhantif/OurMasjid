@@ -1,31 +1,19 @@
 package com.example.ourmasjid.Activity;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.ourmasjid.Fragment.HomeFragment;
-import com.example.ourmasjid.Fragment.LoginFragment;
-import com.example.ourmasjid.Fragment.MasjidTerdekatFragment;
 import com.example.ourmasjid.R;
 import com.example.ourmasjid.RequestHandler;
-import com.example.ourmasjid.SharedPrefManager;
 import com.example.ourmasjid.URLs;
-import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,7 +27,7 @@ public  class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_register);
+        setContentView(R.layout.registerform);
         email=findViewById(R.id.emailtextregister);
         namamasjid=findViewById(R.id.textmasjidregister);
         alamatmasjid=findViewById(R.id.textalamatregister);
@@ -84,11 +72,9 @@ public  class RegisterActivity extends AppCompatActivity {
             password2.requestFocus();
         }
         if(password2text.compareTo(passwordtext)!=0){
-            //password.setError("Password harus sama");
-            password.setError(password.getText().toString());
+            password.setError("Password harus sama");
             password.requestFocus();
-           // password2.setError("Password harus sama");
-            password2.setError(password2.getText().toString());
+            password2.setError("Password harus sama");
             password2.requestFocus();
         }
         if(TextUtils.isEmpty(emailtext)){
@@ -96,12 +82,12 @@ public  class RegisterActivity extends AppCompatActivity {
             email.requestFocus();
         }
         if(TextUtils.isEmpty(namatext)){
-            email.setError("Please enter nama masjid");
-            email.requestFocus();
+            namamasjid.setError("Please enter nama masjid");
+            namamasjid.requestFocus();
         }
         if(TextUtils.isEmpty(alamattext)){
-            email.setError("Please enter alamat");
-            email.requestFocus();
+            alamatmasjid.setError("Please enter alamat");
+            alamatmasjid.requestFocus();
         }
 
 
@@ -157,8 +143,13 @@ public  class RegisterActivity extends AppCompatActivity {
         }
 
         //executing the async task
+
         UserRegister ru = new UserRegister();
-        ru.execute();
+        if((!TextUtils.isEmpty(passwordtext)) || (!TextUtils.isEmpty(password2text)) || (!TextUtils.isEmpty(emailtext)) ||
+                (!TextUtils.isEmpty(namatext)) || (!TextUtils.isEmpty(alamattext)) || (passwordtext.compareTo(password2text)==0)){
+            ru.execute();
+        }
+
 
     }
 

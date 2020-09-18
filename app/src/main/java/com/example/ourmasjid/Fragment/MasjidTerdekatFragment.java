@@ -1,5 +1,6 @@
 package com.example.ourmasjid.Fragment;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,6 +27,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.ourmasjid.Adapter.MasjidTerdekatAdapter;
 import com.example.ourmasjid.Model.MasjidList;
 import com.example.ourmasjid.R;
+import com.example.ourmasjid.URLs;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -51,7 +53,7 @@ public class MasjidTerdekatFragment extends Fragment {
     private void  JsonGet(){
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
-            String URL = "http://192.168.100.7/ourmasjid/masjidDisplayAll.php";
+            String URL = "http://"+ URLs.IP+"/ourmasjid/masjidDisplayAll.php";
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("Title", "Android Volley Demo");
             jsonBody.put("Author", "BNK");
